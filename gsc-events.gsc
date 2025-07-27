@@ -4,7 +4,7 @@ init() {
     level.onplayerkilled = ::onPlayerKilled;
 }
 
-on_player_connected() {
+onPlayerConnected() {
     for(;;) {
         level waittill( "connected", player );
         thread call_event("player_connected", player.name);
