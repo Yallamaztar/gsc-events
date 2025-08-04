@@ -7,6 +7,8 @@ init() {
     level thread onKillcam();
     level thread onKillcamEnd();
 
+    level thread onGameEnded();
+
     level.onplayerkilled = ::onPlayerKilled;
 
 }
