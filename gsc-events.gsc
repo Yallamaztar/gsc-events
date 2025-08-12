@@ -47,7 +47,7 @@ onJoinedSpectators() {
 }
 
 onPlayerKilled(einflictor, attacker, idamage, smeansofdeath, sweapon, vdir, shitloc, psoffsettime, deathanimduration) {
-    thread call_event("player_killed", self.name, attacker.name, smeansofdeath, shitloc, maps\mp\gametypes\_globallogic_utils::isheadshot(sweapon, shitloc, smeansofdeath, einflictor));
+    thread call_event("player_killed", self.name, attacker.name, smeansofdeath, sweapon, shitloc);
 }
 
 onPlayerDisconnected() {
@@ -57,7 +57,7 @@ onPlayerDisconnected() {
 onWeaponChange() {
     for(;;) {
         self waittill( "weapon_change", weapon );
-        thread call_event("player_say", self.name, weapon);
+        thread call_event("weapon_change", self.name, weapon);
     }
 }
 
